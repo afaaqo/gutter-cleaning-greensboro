@@ -9,6 +9,11 @@ import GutterMaintenance from './pages/GutterMaintenance';
 import GutterInstallation from './pages/GutterInstallation';
 import GutterDownspoutInstallation from './pages/Gutterdownspoutinstallation';
 import ScrollToTop from './components/ScrollToTop';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from './config/emailjs';
+
+// Initialize EmailJS
+emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
 
 function App() {
   return (

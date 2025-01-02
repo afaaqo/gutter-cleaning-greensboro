@@ -7,30 +7,34 @@ export default function QuoteForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | ''>('');
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('');
 
-    if (form.current) {
-      emailjs.sendForm(
+    try {
+      if (!form.current) return;
+
+      const result = await emailjs.sendForm(
         EMAILJS_CONFIG.SERVICE_ID,
         EMAILJS_CONFIG.TEMPLATE_ID,
         form.current,
         EMAILJS_CONFIG.PUBLIC_KEY
-      )
-        .then((result) => {
-          console.log('Success:', result.text);
-          setSubmitStatus('success');
-          form.current?.reset();
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-          setSubmitStatus('error');
-        })
-        .finally(() => {
-          setIsSubmitting(false);
-        });
+      );
+
+      console.log('EmailJS Response:', result);
+      
+      if (result.status === 200) {
+        setSubmitStatus('success');
+        form.current.reset();
+      } else {
+        throw new Error('Failed to send email');
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
