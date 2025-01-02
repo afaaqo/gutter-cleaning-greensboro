@@ -71,7 +71,7 @@ export default function GutterPainting() {
                 </div>
                 <div className="relative hidden md:block">
                   <img
-                    src="public\Expert-Gutter-Painting-Sealing-Services-in-Greensboro-NC.jpeg"
+                    src="Expert-Gutter-Painting-Sealing-Services-in-Greensboro-NC.jpeg"
                     alt="Professional gutter painting service"
                     className="rounded-lg shadow-xl w-full h-[400px] object-cover"
                   />
