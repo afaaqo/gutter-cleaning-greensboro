@@ -29,10 +29,10 @@ export default function DownspoutServices() {
   return (
     <>
       <Helmet>
-        <title>Expert Gutter Downspout Services in Greensboro, NC</title>
+        <title>Expert Gutter Downspout Installation in Greensboro, NC</title>
         <meta 
           name="description" 
-          content="Reliable gutter downspout installation, repair, and cleaning services in Greensboro, NC. Protect your home with expert solutions. Call now!"
+          content="Professional gutter downspout installation services in Greensboro, NC. Protect your home with expert solutions. Call now!"
         />
       </Helmet>
 
@@ -45,15 +45,15 @@ export default function DownspoutServices() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                   <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
-                    Professional Gutter Downspout Services in Greensboro, NC
+                    Professional Gutter Downspout Installation in Greensboro, NC
                   </h1>
                   <p className="text-lg text-gray-600 mb-8">
-                    Expert downspout installation, repair, and maintenance services to protect your home from water damage. Our professional team ensures proper water drainage and foundation protection.
+                    Expert downspout installation services to protect your home from water damage. Our professional team ensures proper water drainage and foundation protection.
                   </p>
-                  <div className="flex gap-4">
+                  <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
                     <a 
                       href="tel:+13369650766" 
-                      className="bg-green-800 text-white px-8 py-3 rounded-full hover:bg-green-700 transition"
+                      className="bg-green-800 text-white px-8 py-3 rounded-full hover:bg-green-700 transition w-full md:w-auto text-center"
                     >
                       Call (336) 965-0766
                     </a>
@@ -91,18 +91,24 @@ export default function DownspoutServices() {
               <h2 className="text-3xl font-bold text-center mb-12">Our Downspout Services</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="p-6 bg-green-50 rounded-lg">
-                  <Wrench className="w-12 h-12 text-green-800 mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">Installation & Repair</h3>
+                  <div className="flex justify-center mb-4">
+                    <Wrench className="w-12 h-12 text-green-800" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-center">Installation & Repair</h3>
                   <p className="text-gray-600">Expert installation and repair of all types of downspouts and drainage systems.</p>
                 </div>
                 <div className="p-6 bg-green-50 rounded-lg">
-                  <Clock className="w-12 h-12 text-green-800 mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">Maintenance</h3>
+                  <div className="flex justify-center mb-4">
+                    <Clock className="w-12 h-12 text-green-800" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-center">Maintenance</h3>
                   <p className="text-gray-600">Regular maintenance to ensure your downspouts function properly year-round.</p>
                 </div>
                 <div className="p-6 bg-green-50 rounded-lg">
-                  <Shield className="w-12 h-12 text-green-800 mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">Protection</h3>
+                  <div className="flex justify-center mb-4">
+                    <Shield className="w-12 h-12 text-green-800" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-center">Protection</h3>
                   <p className="text-gray-600">Protect your home's foundation from water damage with proper drainage solutions.</p>
                 </div>
               </div>

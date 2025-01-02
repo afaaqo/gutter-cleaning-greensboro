@@ -21,9 +21,9 @@ const services = [
   },
   { 
     icon: <Hammer className="w-8 h-8" />, 
-    title: 'Gutter Downspout Services', 
+    title: 'Gutter Downspout Installation', 
     description: 'Cleaning and repairs for proper water flow',
-    link: '/gutter-downspout-services'
+    link: '/gutter-downspout-installation'
   },
   { 
     icon: <ClipboardCheck className="w-8 h-8" />, 

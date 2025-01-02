@@ -31,7 +31,9 @@ function Home() {
           <About />
           <Testimonials />
           <CtaBanner />
-          <QuoteForm />
+          <div id="quote-form">
+            <QuoteForm />
+          </div>
           <FAQ />
         </main>
         <Footer />

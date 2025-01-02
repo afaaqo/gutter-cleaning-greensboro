@@ -50,16 +50,16 @@ export default function GutterMaintenance() {
                   <p className="text-lg text-gray-600 mb-8">
                     Protect your home with Greensboro's most trusted gutter maintenance team. Professional maintenance plans tailored to your needs with lifetime warranty protection.
                   </p>
-                  <div className="flex flex-wrap gap-4">
+                  <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
                     <a 
                       href="tel:+13369650766" 
-                      className="bg-green-800 text-white px-8 py-3 rounded-full hover:bg-green-700 transition inline-flex items-center"
+                      className="bg-green-800 text-white px-8 py-3 rounded-full hover:bg-green-700 transition w-full md:w-auto text-center"
                     >
                       Call (336) 965-0766
                     </a>
                     <a 
                       href="#quote" 
-                      className="border-2 border-green-800 text-green-800 px-8 py-3 rounded-full hover:bg-green-50 transition inline-flex items-center"
+                      className="border-2 border-green-800 text-green-800 px-8 py-3 rounded-full hover:bg-green-50 transition w-full md:w-auto text-center"
                     >
                       Schedule Maintenance
                     </a>
@@ -82,18 +82,24 @@ export default function GutterMaintenance() {
               <h2 className="text-3xl font-bold text-center mb-12">Why We're Greensboro's Best Choice</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="p-6 bg-green-50 rounded-lg">
-                  <Shield className="w-12 h-12 text-green-800 mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">Local Expertise</h3>
+                  <div className="flex justify-center mb-4">
+                    <Shield className="w-12 h-12 text-green-800" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-center">Local Expertise</h3>
                   <p className="text-gray-600">Over 13 years serving Greensboro with expert gutter maintenance.</p>
                 </div>
                 <div className="p-6 bg-green-50 rounded-lg">
-                  <Award className="w-12 h-12 text-green-800 mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">5-Star Service</h3>
+                  <div className="flex justify-center mb-4">
+                    <Award className="w-12 h-12 text-green-800" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-center">5-Star Service</h3>
                   <p className="text-gray-600">Highest rated gutter service in Greensboro with 500+ happy customers.</p>
                 </div>
                 <div className="p-6 bg-green-50 rounded-lg">
-                  <Clock className="w-12 h-12 text-green-800 mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">Reliable Service</h3>
+                  <div className="flex justify-center mb-4">
+                    <Clock className="w-12 h-12 text-green-800" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-center">Reliable Service</h3>
                   <p className="text-gray-600">On-time service with 24/7 emergency support for maintenance plan members.</p>
                 </div>
               </div>

@@ -22,8 +22,8 @@ export default function Hero() {
                 Call (336) 965-0766
               </a>
               <a 
-                href="#services"
-                className="border-2 border-green-800 text-green-800 px-8 py-3 rounded-full hover:bg-green-50 transition text-center"
+                href="#quote-form"
+                className="border-2 border-green-800 text-green-800 px-8 py-3 rounded-full hover:bg-green-50 transition w-full md:w-auto text-center"
               >
                 Get Quote
               </a>
@@ -31,8 +31,8 @@ export default function Hero() {
           </div>
           <div className="relative hidden md:block">
             <img
-              src="https://images.unsplash.com/photo-1560749003-f4b1e17e2dff?auto=format&fit=crop&q=80"
-              alt="Professional gutter cleaning service"
+              src="guttercleaningservicegreensboronc.webp"
+              alt="Professional gutter cleaning service greensboro nc"
               className="rounded-lg shadow-xl w-full h-[350px] object-cover"
             />
           </div>

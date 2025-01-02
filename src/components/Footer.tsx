@@ -27,21 +27,51 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#services" className="text-gray-400 hover:text-white">Services</a></li>
-              <li><a href="#about" className="text-gray-400 hover:text-white">About</a></li>
-              <li><a href="#contact" className="text-gray-400 hover:text-white">Contact</a></li>
+              <li>
+                <Link to="/about-us" className="text-gray-400 hover:text-white">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-400 hover:text-white">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-gray-400 hover:text-white">Gutter Cleaning</Link></li>
-              <li><Link to="/gutter-repair" className="text-gray-400 hover:text-white">Gutter Repairs</Link></li>
-              <li><Link to="/gutter-installation" className="text-gray-400 hover:text-white">Gutter Installation</Link></li>
-              <li><Link to="/gutter-guards" className="text-gray-400 hover:text-white">Gutter Guards</Link></li>
-              <li><Link to="/gutter-downspout-services" className="text-gray-400 hover:text-white">Downspout Services</Link></li>
-              <li><Link to="/gutter-maintenance" className="text-gray-400 hover:text-white">Maintenance Plans</Link></li>
-              <li><Link to="/gutter-painting" className="text-gray-400 hover:text-white">Gutter Painting</Link></li>
+              <li>
+                <Link to="/gutter-repair" className="text-gray-400 hover:text-white">
+                  Gutter Repair
+                </Link>
+              </li>
+              <li>
+                <Link to="/gutter-maintenance" className="text-gray-400 hover:text-white">
+                  Gutter Maintenance
+                </Link>
+              </li>
+              <li>
+                <Link to="/gutter-installation" className="text-gray-400 hover:text-white">
+                  Gutter Installation
+                </Link>
+              </li>
+              <li>
+                <Link to="/gutter-guards" className="text-gray-400 hover:text-white">
+                  Gutter Guards
+                </Link>
+              </li>
+              <li>
+                <Link to="/gutter-painting" className="text-gray-400 hover:text-white">
+                  Gutter Painting
+                </Link>
+              </li>
+              <li>
+                <Link to="/gutter-downspout-installation" className="text-gray-400 hover:text-white">
+                  Gutter Downspout Installation
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
@@ -51,10 +81,7 @@ export default function Footer() {
                 <Phone className="w-5 h-5 mr-2" />
                 Call (336) 965-0766
               </div>
-              <div className="flex items-center text-gray-400">
-                <Mail className="w-5 h-5 mr-2" />
-                info@guttercleaningpros.com
-              </div>
+              
               <div className="flex items-center text-gray-400">
                 <MapPin className="w-5 h-5 mr-2" />
                 Greensboro, NC

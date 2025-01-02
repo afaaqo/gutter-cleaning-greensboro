@@ -43,8 +43,8 @@ export default function GutterRepair() {
       <div className="min-h-screen bg-white">
         <Header />
         <main>
-          {/* Hero Section */}
-          <section className="pt-24 pb-12 bg-gradient-to-b from-green-50 to-white">
+          {/* Hero Section - Updated padding-top */}
+          <section className="pt-32 md:pt-28 pb-12 bg-gradient-to-b from-green-50 to-white">
             <div className="container mx-auto px-4">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
@@ -52,18 +52,18 @@ export default function GutterRepair() {
                     Expert Gutter Repair Services Greensboro NC
                   </h1>
                   <p className="text-lg text-gray-600 mb-8">
-                    Looking for reliable gutter repair near me in Greensboro NC? Trust our experienced gutter repair contractors for all your residential gutter repair needs. From gutter leak repair to complete gutter and downspout repair, we deliver quality solutions that last.
+                    Looking for reliable gutter repair near me in Greensboro NC? Trust our experienced gutter repair contractors for all your residential gutter repair needs.
                   </p>
-                  <div className="flex flex-wrap gap-4">
+                  <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
                     <a 
                       href="tel:+13369650766" 
-                      className="bg-green-800 text-white px-8 py-3 rounded-full hover:bg-green-700 transition inline-flex items-center"
+                      className="bg-green-800 text-white px-8 py-3 rounded-full hover:bg-green-700 transition w-full md:w-auto text-center"
                     >
                       Call (336) 965-0766
                     </a>
                     <a 
                       href="#quote" 
-                      className="border-2 border-green-800 text-green-800 px-8 py-3 rounded-full hover:bg-green-50 transition inline-flex items-center"
+                      className="border-2 border-green-800 text-green-800 px-8 py-3 rounded-full hover:bg-green-50 transition w-full md:w-auto text-center"
                     >
                       Get Free Estimate
                     </a>

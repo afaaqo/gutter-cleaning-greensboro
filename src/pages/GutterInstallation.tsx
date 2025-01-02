@@ -54,16 +54,16 @@ export default function GutterInstallation() {
                   <p className="text-lg text-gray-600 mb-8">
                     Looking for expert gutter installation near me in Greensboro NC? Trust our professional gutter installers for top-quality seamless gutter installation and exceptional service at competitive costs.
                   </p>
-                  <div className="flex flex-wrap gap-4">
+                  <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
                     <a 
                       href="tel:+13369650766" 
-                      className="bg-green-800 text-white px-8 py-3 rounded-full hover:bg-green-700 transition inline-flex items-center"
+                      className="bg-green-800 text-white px-8 py-3 rounded-full hover:bg-green-700 transition w-full md:w-auto text-center"
                     >
                       Call (336) 965-0766
                     </a>
                     <a 
                       href="#quote" 
-                      className="border-2 border-green-800 text-green-800 px-8 py-3 rounded-full hover:bg-green-50 transition inline-flex items-center"
+                      className="border-2 border-green-800 text-green-800 px-8 py-3 rounded-full hover:bg-green-50 transition w-full md:w-auto text-center"
                     >
                       Get Free Estimate
                     </a>
@@ -86,18 +86,24 @@ export default function GutterInstallation() {
               <h2 className="text-3xl font-bold text-center mb-12">Why Choose Our Installation Services?</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="p-6 bg-green-50 rounded-lg">
-                  <Shield className="w-12 h-12 text-green-800 mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">Expert Installation</h3>
+                  <div className="flex justify-center mb-4">
+                    <Shield className="w-12 h-12 text-green-800" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-center">Expert Installation</h3>
                   <p className="text-gray-600">Professional gutter installation contractor with years of experience.</p>
                 </div>
                 <div className="p-6 bg-green-50 rounded-lg">
-                  <Star className="w-12 h-12 text-green-800 mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">Quality Materials</h3>
+                  <div className="flex justify-center mb-4">
+                    <Star className="w-12 h-12 text-green-800" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-center">Quality Materials</h3>
                   <p className="text-gray-600">Premium materials for lasting rain gutter installation.</p>
                 </div>
                 <div className="p-6 bg-green-50 rounded-lg">
-                  <Clock className="w-12 h-12 text-green-800 mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">Timely Service</h3>
+                  <div className="flex justify-center mb-4">
+                    <Clock className="w-12 h-12 text-green-800" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-center">Timely Service</h3>
                   <p className="text-gray-600">Efficient installation process with minimal disruption.</p>
                 </div>
               </div>

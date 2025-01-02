@@ -50,12 +50,18 @@ export default function GutterGuards() {
                   <p className="text-lg text-gray-600 mb-8">
                     Looking to install gutter guards? Our expert gutter guards company provides top-quality LeafFilter gutter guard and raindrop gutter guard solutions. Protect your gutters from debris with our professional gutter guard installation services.
                   </p>
-                  <div className="flex justify-center gap-4">
+                  <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
                     <a 
                       href="tel:+13369650766" 
-                      className="bg-green-800 text-white px-8 py-3 rounded-full hover:bg-green-700 transition inline-flex items-center"
+                      className="bg-green-800 text-white px-8 py-3 rounded-full hover:bg-green-700 transition w-full md:w-auto text-center"
                     >
                       Call (336) 965-0766
+                    </a>
+                    <a 
+                      href="#quote" 
+                      className="border-2 border-green-800 text-green-800 px-8 py-3 rounded-full hover:bg-green-50 transition w-full md:w-auto text-center"
+                    >
+                      Get Free Estimate
                     </a>
                   </div>
                 </div>
@@ -162,14 +168,14 @@ export default function GutterGuards() {
                     <p className="text-gray-600">Expert installation and ongoing support from our gutter guards company.</p>
                   </div>
                 </div>
-                {/* Add CTA button */}
-                <div className="mt-12 w-full flex justify-center items-center">
+                {/* Adjusted CTA button */}
+                <div className="md:col-span-2 text-center mt-8">
                   <a 
                     href="tel:+13369650766"
-                    className="inline-flex items-center justify-center bg-green-800 text-white px-8 py-4 rounded-full hover:bg-green-700 transition-colors duration-300 text-lg font-semibold shadow-lg hover:shadow-xl"
+                    className="inline-flex items-center bg-green-800 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors duration-300"
                   >
-                    <span className="mr-2">Call (336) 965-0766 For a Free Quote</span>
-                    <span>→</span>
+                    <span className="text-base font-medium">Call (336) 965-0766 For a Free Quote</span>
+                    <span className="ml-2">→</span>
                   </a>
                 </div>
               </div>
@@ -210,14 +216,14 @@ export default function GutterGuards() {
                   <p className="text-gray-600">Keep birds, rodents, and insects out with our guard systems.</p>
                 </div>
               </div>
-              {/* Add CTA button */}
-              <div className="mt-12 text-center">
+              {/* Adjusted CTA button */}
+              <div className="text-center mt-8">
                 <a 
                   href="tel:+13369650766"
-                  className="inline-flex items-center bg-green-800 text-white px-8 py-4 rounded-full hover:bg-green-700 transition-colors duration-300 text-lg font-semibold shadow-lg hover:shadow-xl"
+                  className="inline-flex items-center bg-green-800 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors duration-300"
                 >
-                  <span className="mr-2">Call (336) 965-0766 For a Free Quote</span>
-                  <span>→</span>
+                  <span className="text-base font-medium">Call (336) 965-0766 For a Free Quote</span>
+                  <span className="ml-2">→</span>
                 </a>
               </div>
             </div>

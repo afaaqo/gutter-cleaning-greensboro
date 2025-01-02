@@ -1,5 +1,5 @@
 import React from 'react';
-import { Droplets, Wrench, Home, Shield, Hammer, ClipboardCheck, PaintBucket } from 'lucide-react';
+import { Droplets, Home, Shield, Hammer, ClipboardCheck, PaintBucket } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const services = [
@@ -23,9 +23,9 @@ const services = [
   },
   { 
     icon: <Hammer className="w-8 h-8" />, 
-    title: 'Gutter Downspout Services', 
+    title: 'Gutter Downspout Installation', 
     description: 'Professional downspout installation and maintenance',
-    link: '/downspout-services'
+    link: '/gutter-downspout-installation'
   },
   { 
     icon: <ClipboardCheck className="w-8 h-8" />, 

@@ -1,24 +1,37 @@
-import React, { useState } from 'react';
+import { useRef, FormEvent, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../config/emailjs';
 
 export default function QuoteForm() {
-  const [formData, setFormData] = useState({
-    zipCode: '',
-    name: '',
-    phone: '',
-    email: '',
-    details: ''
-  });
+  const form = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | ''>('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-  };
+    setIsSubmitting(true);
+    setSubmitStatus('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    if (form.current) {
+      emailjs.sendForm(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        form.current,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      )
+        .then((result) => {
+          console.log('Success:', result.text);
+          setSubmitStatus('success');
+          form.current?.reset();
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          setSubmitStatus('error');
+        })
+        .finally(() => {
+          setIsSubmitting(false);
+        });
+    }
   };
 
   return (
@@ -28,89 +41,117 @@ export default function QuoteForm() {
           <div className="bg-white p-8 rounded-lg shadow-md">
             <h2 className="text-3xl font-bold mb-4 text-green-800">Get Free Quote Instantly</h2>
             <p className="text-xl text-gray-700 mb-8">
-              Protect your home from costly water damage - Get your personalized quote today and save up to 25% on professional gutter services!
+              Protect your home from costly water damage - Get your personalized quote today and save on professional gutter services!
             </p>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            
+            <form ref={form} onSubmit={handleSubmit} className="space-y-6">
+              <input type="hidden" name="form_source" value="Quote Form" />
+              
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="zipCode" className="block text-sm font-medium text-gray-700 mb-1">
-                    Zip Code*
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    First Name*
                   </label>
                   <input
                     type="text"
-                    id="zipCode"
-                    name="zipCode"
+                    name="first_name"
                     required
                     className="w-full px-4 py-2 border border-green-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-green-50"
-                    value={formData.zipCode}
-                    onChange={handleChange}
                   />
                 </div>
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Full Name*
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Last Name*
                   </label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
+                    name="last_name"
                     required
                     className="w-full px-4 py-2 border border-green-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-green-50"
-                    value={formData.name}
-                    onChange={handleChange}
                   />
                 </div>
               </div>
+              
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                    Phone Number*
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                    className="w-full px-4 py-2 border border-green-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-green-50"
-                    value={formData.phone}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Email Address
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Email*
                   </label>
                   <input
                     type="email"
-                    id="email"
                     name="email"
+                    required
                     className="w-full px-4 py-2 border border-green-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-green-50"
-                    value={formData.email}
-                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Phone*
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    className="w-full px-4 py-2 border border-green-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-green-50"
                   />
                 </div>
               </div>
+
               <div>
-                <label htmlFor="details" className="block text-sm font-medium text-gray-700 mb-1">
-                  Details of the work/issue
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Service Needed*
+                </label>
+                <select
+                  name="service"
+                  required
+                  className="w-full px-4 py-2 border border-green-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-green-50"
+                >
+                  <option value="">Select a service</option>
+                  <option value="gutter-cleaning">Gutter Cleaning</option>
+                  <option value="gutter-installation">Gutter Installation</option>
+                  <option value="gutter-repair">Gutter Repair</option>
+                  <option value="gutter-guards">Gutter Guards</option>
+                  <option value="gutter-maintenance">Gutter Maintenance</option>
+                  <option value="gutter-painting">Gutter Painting</option>
+                  <option value="downspout-services">Downspout Services</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Message
                 </label>
                 <textarea
-                  id="details"
-                  name="details"
+                  name="message"
                   rows={4}
                   className="w-full px-4 py-2 border border-green-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-green-50"
-                  value={formData.details}
-                  onChange={handleChange}
                 ></textarea>
               </div>
+
+              {submitStatus === 'success' && (
+                <div className="p-4 bg-green-100 text-green-700 rounded-lg">
+                  Thank you! We'll contact you soon with your quote.
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="p-4 bg-red-100 text-red-700 rounded-lg">
+                  Sorry, there was an error. Please try again or call us directly.
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full bg-green-800 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition-colors font-semibold"
+                disabled={isSubmitting}
+                className={`w-full ${
+                  isSubmitting ? 'bg-gray-400' : 'bg-green-800 hover:bg-green-700'
+                } text-white py-3 px-6 rounded-lg transition-colors font-semibold`}
               >
-                Get Your Free Quote
+                {isSubmitting ? 'Sending...' : 'Get Your Free Quote'}
               </button>
             </form>
           </div>
+          
           <div className="hidden md:block">
             <img
               src="Gutter-cleaning-services-greensboro-nc.webp"
